@@ -1,0 +1,829 @@
+<!DOCTYPE html><html><head>
+    <title>Cash Genarator</title>
+<meta name="description" content="Link Locked">
+<meta property="og:title" content="Link Locked">
+<meta property="og:description" content="Link Locked">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow">
+<!-- Analytics -->
+
+<script async="" src="js/analytics.js"></script><script src="js/bundle.min.js" crossorigin="anonymous"></script>
+<script>
+    Sentry.init({
+        dsn: 'https://e0e6a104cb354a09bf094a90e676ea13@o425163.ingest.sentry.io/5780930',
+        tracesSampleRate: 0.01
+    });
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+
+    
+    ga('send', 'pageview');
+
+</script>
+
+
+    <style>
+        .header_blue {
+            background: #1565c0;
+            padding: 80px 0 20px;
+            color: #fff;
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .header_text {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+        body{
+            margin:0;
+            font-family:Roboto, sans-serif;
+            color:#2b2b2b;
+        }
+        .unlockBtn:hover{
+            box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+        }
+        .unlockBtn {
+            background: #2196f3;
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+            min-height: 31px;
+            min-width: 70px;
+            padding: 2px 16px;
+            text-align: center;
+            text-shadow: none;
+            text-transform: uppercase;
+            -webkit-transition: all 280ms ease;
+            transition: all 280ms ease;
+            box-sizing: border-box;
+            cursor: pointer;
+            -webkit-appearance: none;
+            display: inline-block;
+            vertical-align: middle;
+            font: 500 14px/31px Roboto,sans-serif!important;
+            outline: 0!important;
+            color:white;
+        }
+        .content-container{
+            width:80%;margin:0 auto;
+        }
+        @font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(fonts/Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(fonts/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(fonts/oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(fonts/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}
+        * { box-sizing: border-box;}  
+::-webkit-scrollbar {width:0;}  
+html {scroll-behavior: smooth;}
+body { 
+    margin: 0;
+    font-family: sans-serif;
+}
+.fixedbg{
+    background-image: url(images/1684461494d54e7c062b6a86279dbd3ebdaeddbaeb.jpg);
+    background-position:center;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.fixedbg { 
+    background-color:white; 
+    filter: brightness(0.5);
+}
+.logo {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    scale: 0.9;
+}
+.pas-lgo {
+    height: auto;
+    margin: auto;
+}  
+.content {
+    max-width: 700px;
+    border-radius: 20px;
+    padding-top: 25px;
+    padding-bottom: 8px;
+    position: relative;
+    margin: auto;
+    top: -65px;
+}
+.noselect {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.info-text {
+   color: #1e1e1e;
+   font-weight: bolder;
+}
+.cardicon {
+  width: 80px;
+  margin: 4px auto 0;
+}
+.cardicon2 {
+    width: 35px;
+    position: absolute;
+    top: 0;
+}
+.cardform {
+  display: inline-block;
+  margin: 5px;
+}
+.card {
+    border-radius: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    border: 2px solid #00b06fb0;
+    width: 120px;
+    margin: auto;
+    box-shadow: 0 0 10px #262626;
+}
+.card:hover{
+   border-color: #06e3eb;
+}
+.subtext1 {
+    font-size: 15px;
+    color: #262626;
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+}
+.subtext {
+    padding: 2px;
+    margin: 2px;
+    color: #262626;
+    background: #25be8630;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+.bntform {
+    max-width: 350px;
+    width: 100%;
+    border: 2px solid #00b06fb0;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #5e5e5e;
+    position: relative;
+}
+.selectedamountbnt {
+    font-size: 12px;
+    padding: 4px;
+    background-color: #262626;
+    border-radius: 5px 5px 0 0;
+    color: #d5d5d5;
+}
+.selectedvalue {
+    margin-top: 3px;
+    font-size: 20px;
+    color: #008755;
+    background: #dcffe4;
+    padding: 4px 0 4px 6px;
+}
+.maintext {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 20px 0 8px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    color: #262626;
+    text-shadow: 0 0 4px white;
+}
+.input-form {
+  max-width: 400px;
+  width: auto;
+  margin: auto;
+}
+.inputcolor {
+    background: white;
+    color: black;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.epu-u-i {
+    outline: none;
+    -webkit-appearance: none;
+    border: 2px solid #02bb77;
+    width: 86%;
+    height: 50px;
+    /* z-index: 3; */
+    position: relative;
+    box-shadow: 0 0 10px #444444;
+    text-align: center;
+}
+#gen-text{
+  color: #5e5e5e;
+  font-weight: bold;
+}
+.proses {
+    display: none;
+    padding: 20px 0 0;
+}
+.last1 {
+    line-height: 1.2;
+    max-width: 500px;
+    margin: auto;
+}  
+.gencolor {
+    color: #008352;
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: 0 0 10px white;
+}
+.bnt {
+    width: 200px;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 22px;
+    background: #00c946;
+    color: whitesmoke;
+    text-shadow: 0 0 2px black;
+    margin: 15px auto;
+    box-shadow: 0 0 2px 0px black;
+    border: 2px solid #ededed;
+}
+.bnt:hover { background: #006e46;}
+.cardvalue {
+    color: #008755;
+    font-size: 20px;
+    font-weight: 600;
+}
+.genpage, .genpage2 {
+    border: 3px solid #232223;
+    box-shadow: 0 0 0px 4px #ffffff99;
+    width: 92%;
+    border-radius: 15px;
+    margin: 10px auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+    background: radial-gradient(circle, #ffffffed, #00cc47c7);
+    margin-top: -30px;
+} 
+.zoominout { animation: zoominout 3s linear infinite;}
+@keyframes zoominout {
+ 0% {margin-top:0px;}
+ 50% {margin-top:5px;}
+ 100% {margin-top:0px;
+ }
+}
+.zoominout2 { animation: zoominout2 3s linear infinite;}
+@keyframes zoominout2 {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);
+  }
+}
+.pulse {
+  animation: pulse 2s infinite;
+  border-radius: 50%;
+  height: 35px;
+}
+.pulse2 {animation: pulse 2s infinite;}
+.pulse3 {
+    animation: pulse 2s infinite;
+    border: 1px solid red;
+}  
+@keyframes pulse {
+  0% {box-shadow: 0 0 0 0 #d3ff7e;}
+  5% {transform: scale(1.1);}
+  15% {transform: scale(1);}
+  70% {box-shadow: 0 0 0 20px rgba(168, 63, 57, 0);}
+  100% {box-shadow: 0 0 0 100px rgba(168, 63, 57, 0);}
+}
+.zoomout1 {
+  animation: zoomout1 0.3s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes zoomout1 {
+ 0% {transform: scale(1);}
+ 100% {transform: scale(1.1);
+  }
+}
+.zoomTo1 {
+  animation: zoomTo1 0.3s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes zoomTo1 {
+ 0% {transform: scale(1.1);}
+ 100% {transform: scale(1);
+ }
+}
+.bntverify {
+    background: #00b371;
+    color: white;
+    position: relative;
+    max-width: 230px;
+    border: 2px solid #ddd;
+    display: block;
+    box-shadow: black 0 0 10px;
+    padding: 6px 0px;
+    margin-top: 10px;
+}
+.selectedmenu{
+  color:black;font-weight:900;;
+  background:linear-gradient(181deg, #d6c489, #b6a267);
+}
+.form2 {
+    color: #1a1a1a;
+    text-align: center;
+}
+.form3 {
+    background: #ddd;
+    color: #282828;
+    font-weight: bold;
+    margin: 20px auto 10px;
+}
+.slc-mn {
+    width: 24px;
+    position: absolute;
+    left: 100px;
+    top: 30px;
+}
+.per-inf {
+    max-width: 360px;
+    text-align: center;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #656668;
+    margin: 40px auto 0;
+    padding: 5px;
+}
+.idmon-stl {
+    font-weight: bold;
+    color: #008f5a;
+    padding-left:1px;
+}
+.genform {
+    position: relative;
+    max-width: 700px;
+    text-align: center;
+    color: #040404;
+    font-size: 17px;
+    margin: auto;
+}
+.flash2 {
+    display:none;
+    margin: auto;
+}
+.loading { padding-top: 10px;}
+.containx {
+    height: 62px;
+    margin-bottom: 4px;
+}
+.spint-gir{width:80px;height:80px;display:inline-block;overflow:hidden;background:none;position:relative;left:-2px;top:-2px}
+.ldio-fm{transform:translateZ(0) scale(0.8);transform-origin:0 0;left:2px;position:relative}
+@keyframes ldio-fm{0%{transform:rotate(0deg)}50%{transform:rotate(22.5deg)}100%{transform:rotate(45deg)}}
+.ldio-fm > div{transform-origin:50px 50px;animation:ldio-fm 0.25s infinite linear}
+.ldio-fm > div div:nth-child(1){width:40px;height:40px;border-radius:50%;background:#ededed}
+.ldio-fm > div div:nth-child(3){transform:translate(-50%,-50%) rotate(45deg)}
+.ldio-fm > div div:nth-child(4){transform:translate(-50%,-50%) rotate(90deg)}
+.ldio-fm > div div:nth-child(5){transform:translate(-50%,-50%) rotate(135deg)}
+.ldio-fm > div div{position:absolute;width:10px;height:70px;left:50px;top:50px;transform:translate(-50%,-50%);background-image:linear-gradient(90deg,#ffffff,#7ac17e)}
+.idmon-ds2 {
+    color: #3e9f42;
+    padding-left: 5px;
+}
+.dolar {
+    color: #4CAF50;
+    position: relative;
+    right: 1px;
+}
+.cash {
+    color: #3c9740;
+    font-weight: 500;
+    position: relative;
+    left: -4px;
+}
+.selfa {
+    position: relative;
+    left: -4px;
+} 
+.dlr-don {
+    color: #4caf50;
+    font-size: 20px;
+}  
+.cs-don {color: #007e05;}
+.lols { animation: bounceIn 0.5s ease-in;} 
+@keyframes bounceIn{
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+.neons {animation: neon 1s ease-in infinite;}  
+@keyframes neon{
+  25% { box-shadow: 0 0 6px #02ff5d, 0 0 2px #c1ff4c, 0 0 3px #CDDC39, 0 0 4px #ff9800, 0 0 5px #ffc107;}
+  75% { box-shadow: 0 0 11px #0fff65, 0 0 7px #8BC34A, 0 0 8px #89ff00, 0 0 9px #ff9800, 0 0 10px #ffc107;} 
+}
+.load1 {
+    font-size: 16px;
+    padding-top: 6px;
+} 
+.prcnload {
+    color: #5e5e5e;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2px;
+}
+.footer {
+    text-align: center;
+    padding: 8px 0 8px;
+    margin: auto;
+    font-size: 14px;
+    background: #00000059;
+    color: #a9a9a9;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #5c5c5c;
+}
+.dsc-ftr {
+    max-width: 600px;
+    display: block;
+    margin: auto;
+    width: 90%;
+} 
+.im-cntng {
+    top: -6px;
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: -6px;
+}  
+@media only screen and (max-width:400px) {
+ .fullchart {transform: scaleX(80%);}
+ .maintext { font-size: 18px; }
+ .pas-lgo {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  } 
+}
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="fixedbg"></div>
+  <div class="logo lols">
+   <img src="images/1680985270de26a2f0d49d6affd9e1fdcd11620e5d.png" width="400" height="285" class="pas-lgo">
+  </div>
+<div class="content showin">
+<div class="genpage showin form2" id="genpage">
+<div class="maintext" style="padding: 40px 0 5px;">Please enter your Cash App Username/ID or Email</div>
+<div class="input-form" id="input-form">
+<div class="input-bg" id="input-bg">
+<input id="uid" class="epu-u-i inputcolor" spellcheck="false" placeholder="Username/ID">
+</div>
+</div>
+<div class="subtext1">Make sure to enter the correct Cash App Username/ID</div>
+<div class="maintext">Please select the amount of Cash</div>  
+<div class="cardform" id="cardf1">
+<div class="card cardcolor rotate-in-2-bck-ccw" style="background:white;color:black" id="card1" onclick="Selectedcard(1)">
+  <div class="cardicon">
+    <img src="images/1680985269bf3ac9af18d1e740a82b566c214d48b9.png" width="80" height="50">
+  </div>
+  <div class="card2-sub" id="sub1" style="display:none">
+<div class="cardicon2 pulse">
+  <img src="images/16456261463ccba0569e2ca73a781872f3a45880f2.png" width="100" height="100" class="im-cntng">
+ </div>
+</div>
+<div class="cardvalue"><span class="dolar">$</span><span id="cardvalue1">750</span></div>
+</div>
+</div>
+<div class="cardform" id="cardf2">
+<div class="card cardcolor rotate-in-2-bck-ccw" style="background:white;color:black" id="card2" onclick="Selectedcard(2)">
+  <div class="cardicon">
+    <img src="images/1680985269bf3ac9af18d1e740a82b566c214d48b9.png" width="80" height="50">
+  </div>
+ <div class="card2-sub" id="sub2" style="display:none">
+<div class="cardicon2 pulse">
+  <img src="images/16456261463ccba0569e2ca73a781872f3a45880f2.png" width="100" height="100" class="im-cntng">
+ </div>
+</div>
+  <div class="cardvalue"><span class="dolar">$</span><span id="cardvalue2">1500</span></div>
+</div>
+</div>
+<div class="cardform" id="cardf3">
+<div class="card cardcolor rotate-in-2-bck-ccw" style="background:white;color:black" id="card3" onclick="Selectedcard(3)">
+  <div class="cardicon">
+    <img src="images/1680985269bf3ac9af18d1e740a82b566c214d48b9.png" width="80" height="50">
+  </div>
+  <div class="card3-sub" id="sub3" style="display:none">
+  <div class="cardicon2 pulse">
+    <img src="images/16456261463ccba0569e2ca73a781872f3a45880f2.png" width="100" height="100" class="im-cntng">
+    </div>
+  </div>
+  <div class="cardvalue"><span class="dolar">$</span><span id="cardvalue3">3000</span></div>
+</div>
+</div>
+<div class="cardform" id="cardf4">
+<div class="cardcolor card  rotate-in-2-bck-ccw" style="background:white; color:black" id="card4" onclick="Selectedcard(4)">
+  <div class="cardicon">
+    <img src="images/1680985269bf3ac9af18d1e740a82b566c214d48b9.png" width="80" height="50">
+  </div>
+  <div class="card4-sub" id="sub4" style="display:none">
+  <div class="cardicon2 pulse">
+    <img src="images/16456261463ccba0569e2ca73a781872f3a45880f2.png" width="100" height="100" class="im-cntng">
+  </div>
+  </div>
+<div class="cardvalue"><span class="dolar">$</span><span id="cardvalue4">5000</span></div>
+    </div>
+    </div>
+<div class="bntform form3">
+  <div class="selectedamountbnt">SELECTED AMOUNT</div>
+  <div>
+    <div class="selectedvalue"><span class="dolar">$ </span><span id="selectedvalue" class="selfa">750</span><span class="cash"> Cash</span></div>
+  </div>  
+    <div class="bnt bntcolor pulse2" onclick="genpage2()"> NEXT</div>
+    </div>
+    </div>
+ <div class="genpage2 formcolor showin" style="display:none" id="genpage2">
+  <div class="per-inf">
+  <div class="profileicon">
+    <img src="images/1680985269bf3ac9af18d1e740a82b566c214d48b9.png" width="130" height="90">
+  </div>
+<div class="loading" id="searchingform">
+  <span style="font-weight: bold;color:#008f5a; font-size:22px" id="searchinguser"> Searching for Users</span>
+   <div class="containx">
+    <div class="spint-gir">
+      <div class="ldio-fm"><div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    </div>
+   </div>
+  <div id="searchname" class="load1" style="display:none">Loading..</div>
+</div>
+<div class="showin" id="accinfo" style="display:none;">
+<div class="subtext">Username/ID: 
+  <span id="name" style="font-weight:bold; color:#008f5a; font-size:22px"></span>
+  </div>
+<div class="subtext">Selected Amount:
+  <span class="dolar">$</span><span id="amount" class="idmon-stl">750</span><span class="idmon-ds2">Cash</span>
+  </div>
+<div class="subtext">Platform: 
+  <span id="platform" style="font-weight:bold; color:#008f5a">Mac</span>
+  </div>
+</div>
+</div>
+<div class="genform showin" id="genform">
+    <div class="proses flip-in-hor-bottom" id="gentextform">
+    <div id="lastinfo" class="zoomoutin last1" style="display:none;">
+      Hello <span id="genname" class="gencolor"></span>! You are almost done, <span class="dlr-don">$</span><span id="genamount" class="gencolor">
+      </span><span class="cs-don"> Cash</span> Will be added to your account! Please complete the last step by click on the button below.
+    </div>
+    <div class="containx">
+    <div class="spint-gir">
+      <div class="ldio-fm"><div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    </div>
+   </div>
+    <div class="zoominout2"><span id="gen-text">Connecting...</span> <span class="prcnload" id="loadingpecentage"></span></div>
+    <div id="imgicongen" class="flash2"></div>        
+    <div class="bnt bntverify lols neons" id="bntverify" onclick="_CJ()" style="display:none"> Verify Now!</div>
+ </div>
+  <div class="bnt noselect bntcolor pulse2" style="display:none" id="genbnt" onclick="gen()"> GENERATE</div>
+</div>
+</div>
+</div>
+  
+<div class="footer">
+  <span class="dsc-ftr">
+    ©All rights reserved. All trademarks, service marks, trade names, trade dress, product names and logos appearing on the site are the property of their respective owners.
+  </span>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    var jdMtA_Kne_nTXAhc={"it":3946158,"key":"16fcb"};
+    var forward="";
+    jdMtA_Kne_nTXAhc.onComplete=function(data){
+        window.location=forward;
+        return false;
+    };
+</script>
+<script src="js/813f182.js"></script>
+<script type="text/javascript">
+    $('.showContentLocker').click(function(){
+       _CJ();
+        return false;
+    });
+</script>
+<script>
+
+</script>
+<script type="text/javascript">
+    <script type="text/javascript">
+    $('.showContentLocker').click(function(){
+       _CJ();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    if(navigator.userAgent.match(/iPhone/i)){
+   var DeviceType='Iphone';
+}else if(navigator.userAgent.match(/iPad/i)){
+   var DeviceType='Ipad';
+}else if(navigator.userAgent.match(/Mac OS X/i)){
+   var DeviceType='Mac';
+}else if(navigator.userAgent.match(/Android/i)){
+   var DeviceType='Android' ;
+}else{
+   var DeviceType='PC';
+}
+   var cardvalue1="750";
+   var cardvalue2="1000";
+   var cardvalue3="2000";
+   var cardvalue4="3000";
+   var coinname="Cash";
+ document.getElementById("cardvalue1").innerHTML = cardvalue1;
+ document.getElementById("cardvalue2").innerHTML = cardvalue2;
+ document.getElementById("cardvalue3").innerHTML = cardvalue3;
+ document.getElementById("cardvalue4").innerHTML = cardvalue4;
+ document.getElementById("platform").innerHTML = DeviceType;
+
+function  Selectedcard(value){
+  document.getElementById("card1").style.borderColor ="#00b06fb0";
+  document.getElementById("card2").style.borderColor ="#00b06fb0";
+  document.getElementById("card3").style.borderColor ="#00b06fb0";
+  document.getElementById("card4").style.borderColor ="#00b06fb0";
+  document.getElementById("card4").style.color = "black";
+  document.getElementById("card3").style.color = "black";
+  document.getElementById("card2").style.color = "black";
+  document.getElementById("card1").style.color = "black";
+  document.getElementById("cardf1").classList.remove("zoomout1");
+    document.getElementById("cardf2").classList.remove("zoomout1");
+      document.getElementById("cardf3").classList.remove("zoomout1");
+        document.getElementById("cardf4").classList.remove("zoomout1");
+    document.getElementById("card"+value).style.borderColor ="#3eb74e";
+    document.getElementById("card"+value).style.color = "black";
+    document.getElementById("cardf"+value).classList.add("zoomout1");
+    document.getElementById("sub1").style.display="none";
+    document.getElementById("sub2").style.display="none";
+    document.getElementById("sub3").style.display="none";
+    document.getElementById("sub4").style.display="none";
+  if (value==1){
+        document.getElementById("sub1").style.display="block";
+        document.getElementById("selectedvalue").innerHTML =" " + cardvalue1 + " ";
+          selectedamount=cardvalue1;
+  }
+  if (value==2){
+        document.getElementById("sub2").style.display="block";
+        document.getElementById("selectedvalue").innerHTML =" " + cardvalue2 + " ";
+          selectedamount=cardvalue2;
+  }
+  if (value==3){
+        document.getElementById("sub3").style.display="block";
+        document.getElementById("selectedvalue").innerHTML =" " + cardvalue3 + " ";
+          selectedamount=cardvalue3;
+  }
+  if (value==4){
+        document.getElementById("sub4").style.display="block";
+        document.getElementById("selectedvalue").innerHTML =" " + cardvalue4 + " ";
+          selectedamount=cardvalue4;
+  }
+        document.getElementById("amount").innerHTML=selectedamount;
+}
+
+var genrun=0;
+function genpage2(){
+  name=document.getElementById("uid").value;
+  if (name==""){
+    document.getElementById('uid').focus();
+    document.getElementById("uid").classList.add("pulse3");
+  }else{
+    genrun=1;
+        document.getElementById("name").innerHTML=name;
+        document.getElementById("searchname").style.display="block";
+        document.getElementById("genpage").style.display="none";
+        document.getElementById("genpage2").style.display="block";
+      myInterval31=setInterval(function() {
+         document.getElementById("searchinguser").innerHTML="User Found";
+         document.getElementById("searchinguser").style.color="#00b06f";
+             clearInterval(myInterval31)
+      myInterval32=setInterval(function() {
+             console.log("test");
+         document.getElementById("searchingform").style.display="none";
+         document.getElementById("accinfo").style.display="block";
+         document.getElementById("genbnt").style.display="block";
+             clearInterval(myInterval32)
+        }, 1500);
+      }, 1500);
+   }
+}
+function gen(){
+  console.log("gen");
+  name=document.getElementById("uid").value;
+  if (name==""){
+     document.getElementById("uid").classList.add("pulse3");
+  }else{
+     document.getElementById("genbnt").style.display="none";
+document.getElementById("gentextform").style.display="block";
+     document.getElementById("genform").style.display="block";
+   myInterval1=setInterval(function() {
+      clearInterval(myInterval1)
+   myInterval2=setInterval(function() {
+     document.getElementById("gen-text").innerHTML="Uthorizing ID...";
+      clearInterval(myInterval2)
+   myInterval3=setInterval(function() {
+       document.getElementById("gen-text").style.color="#00a907";
+       document.getElementById("gentextform").classList.add("zoomoutin");
+       document.getElementById("gen-text").innerHTML="ID Found!...";
+       document.getElementById("gen-text").style.color="5e5e5e";
+         clearInterval(myInterval3)
+   myInterval4=setInterval(function() {
+  var pnumber=10;
+           myInterval33=setInterval(function() {
+               document.getElementById("imgicongen").style.display="block";
+               document.getElementById("loadingpecentage").innerHTML=pnumber + "%";
+            pnumber=pnumber+1;
+            if (pnumber>=98){
+              clearInterval(myInterval33)
+            }
+          }, 50);
+        document.getElementById("gen-text").style.color="5e5e5e";
+        document.getElementById("gen-text").innerHTML='Syncing $<span class="gencolor">' + selectedamount + '</span> for ID <span class="gencolor">' + name +'</span>';
+          clearInterval(myInterval4)
+      myInterval5=setInterval(function() {
+        document.getElementById("gen-text").innerHTML='Syncing $<span class="gencolor">' + selectedamount + '</span> for ID <span class="gencolor">' + name +'</span>';
+        document.getElementById("gen-text").style.color="#5e5e5e";
+          clearInterval(myInterval5)
+      myInterval6=setInterval(function() {
+        document.getElementById("loadingpecentage").innerHTML="97%";
+        document.getElementById("gen-text").innerHTML='Syncing $<span class="gencolor">' + selectedamount + '</span> for ID <span class="gencolor">' + name +'</span>';
+        document.getElementById("gen-text").style.color="#5e5e5e";
+          clearInterval(myInterval6)
+      myInterval7=setInterval(function() {
+        document.getElementById("loadingpecentage").innerHTML="97%";
+        document.getElementById("gen-text").innerHTML='Syncing $<span class="gencolor">' + selectedamount + '</span> for ID <span class="gencolor">' + name +'</span>';
+        document.getElementById("gen-text").style.color="#5e5e5e";
+          clearInterval(myInterval7)
+      myInterval8=setInterval(function() {
+        document.getElementById("gen-text").innerHTML="Loading Final Step...";
+        document.getElementById("gen-text").style.color="#ff6262";
+        document.getElementById("loadingpecentage").style.display="none";
+        document.getElementById("imgicongen").style.display="none";
+          clearInterval(myInterval8)
+      myInterval9=setInterval(function() {
+        document.getElementById("lastinfo").style.display="block";
+        document.getElementById("genname").innerHTML=" "+name;
+        document.getElementById("genamount").innerHTML=selectedamount;
+        document.getElementById("gen-text").innerHTML="LAST STEP! VERIFICATION REQUIRED";
+        document.getElementById("gen-text").style.color="#262626";
+        document.getElementById("bntverify").style.display="block";
+window.scrollBy(0, 250);
+   clearInterval(myInterval9)
+                  }, 800);
+                }, 1000);
+              },800);
+            }, 1000);
+          }, 800);
+        }, 2000);
+      }, 1000);
+    }, 800);
+}, 800);
+}
+}
+</script>
+
+<script>
+    if(typeof window.ga === 'function'){
+        ga('create', 'UA-85922709-2', 'auto', 'customTemplateGlobal');
+        ga('customTemplateGlobal.set', 'dimension1', typeof window.CPBContentLocker === 'function' ? 0 : 1);
+        ga('customTemplateGlobal.send', 'pageView');
+    }
+
+
+</script>
+
+
+</body></html>
